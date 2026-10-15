@@ -264,9 +264,3 @@ Coller le token sur https://jwt.io : on retrouve le **header** (`alg: HS256`) et
 - **`SecurityConfig`** — `BCryptPasswordEncoder`, `AuthenticationManager`, politique `STATELESS`, `JwtFilter` placé avant `UsernamePasswordAuthenticationFilter`.
 - **`AuthController`** — `/auth/register` (hachage + sauvegarde) et `/auth/login` (authentification + génération du JWT).
 - **`UserController`** — endpoints protégés `/api/hello` et `/api/profile`.
-
----
-
-## 9. Auteur
-
-Projet réalisé par : _à compléter_ — ENSET Mohammedia, 2026
