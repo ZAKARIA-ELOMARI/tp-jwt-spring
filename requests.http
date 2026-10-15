@@ -1,0 +1,22 @@
+### 1. Inscription
+POST http://localhost:8080/auth/register
+Content-Type: application/json
+
+{ "email": "user@enset.ma", "password": "1234" }
+
+### 2. Connexion -> renvoie {"token":"..."}
+POST http://localhost:8080/auth/login
+Content-Type: application/json
+
+{ "email": "user@enset.ma", "password": "1234" }
+
+### 3. Sans token -> 401/403
+GET http://localhost:8080/api/hello
+
+### 4. Avec token (remplacer <TOKEN>) -> 200
+GET http://localhost:8080/api/hello
+Authorization: Bearer <TOKEN>
+
+### 5. Profil
+GET http://localhost:8080/api/profile
+Authorization: Bearer <TOKEN>

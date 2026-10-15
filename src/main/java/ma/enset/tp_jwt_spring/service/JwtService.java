@@ -50,9 +50,10 @@ public class JwtService {
             .getPayload();
     }
 
-    // Vérification de la validité du token
-    public boolean isTokenValid(String token) {
-        return !isTokenExpired(token);
+    // Vérification de la validité du token : bon utilisateur + non expiré
+    public boolean isTokenValid(String token, UserDetails userDetails) {
+        String username = extractUsername(token);
+        return username.equals(userDetails.getUsername()) && !isTokenExpired(token);
     }
 
     // Vérification de l'expiration du token
